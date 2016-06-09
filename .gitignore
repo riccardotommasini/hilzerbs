@@ -1,0 +1,7 @@
+# eiffel
+EIFGENs
+affo/*
+*.rc
+
+*log
+*.out
