@@ -1,0 +1,129 @@
+Creating barber 1
+Creating barber 2
+Creating barber 3
+Creating customer 1
+Creating customer 2
+Creating customer 3
+Creating customer 4
+Creating customer 5
+Creating customer 6
+Creating customer 7
+Creating customer 8
+Creating customer 9
+Customer 8 is alive 
+Customer 1 is alive 
+Customer 1 tries to enter the shop
+Customer 4 is alive 
+Customer 4 tries to enter the shop
+Customer 6 is alive 
+Customer 5 is alive 
+Customer 7 is alive 
+Customer 7 tries to enter the shop
+Customer 8 tries to enter the shop
+Customer 6 tries to enter the shop
+Customer 8 tries to sit
+Customer 5 tries to enter the shop
+Customer 3 is alive 
+Customer 3 tries to enter the shop
+Customer 8 sits on sofa
+Customer 9 is alive 
+Customer 4 tries to sit
+Customer 6 tries to sit
+Customer 1 tries to sit
+Customer 5 tries to sit
+Customer 8 tries to get a barber for an haircut
+Customer 2 is alive 
+Customer 2 tries to enter the shop
+Customer 7 tries to sit
+Customer 4 sits on sofa
+Customer 9 tries to enter the shop
+Customer 3 tries to sit
+Customer 4 tries to get a barber for an haircut
+Customer 6 sits on sofa
+Customer 9 tries to sit
+Customer 6 tries to get a barber for an haircut
+Customer 2 tries to sit
+Customer 8 will be served by Barber 1
+Customer 8 tries to get an haircut
+Customer 4 will be served by Barber 2
+Customer 4 tries to get an haircut
+Barber 2 is cutting Customer 4 s hairs.
+Barber 1 is cutting Customer 8 s hairs.
+Customer 5 sits on sofa
+Customer 5 tries to get a barber for an haircut
+Customer 6 will be served by Barber 3
+Customer 6 tries to get an haircut
+Customer 1 sits on sofa
+Barber 3 is cutting Customer 6 s hairs.
+Customer 1 tries to get a barber for an haircut
+Customer 2 sits on sofa
+Customer 2 tries to get a barber for an haircut
+Customer 4 got an haircut
+Customer 8 got an haircut
+Customer 8 tries to get a barber to pay
+Customer 4 tries to get a barber to pay
+Customer 5 will be served by Barber 2
+Customer 5 tries to get an haircut
+Customer 1 will be served by Barber 1
+Barber 2 is cutting Customer 5 s hairs.
+Customer 6 got an haircut
+Customer 6 tries to get a barber to pay
+Customer 7 sits on sofa
+Customer 7 tries to get a barber for an haircut
+Customer 8 will be served by Barber 3
+Customer 1 tries to get an haircut
+Customer 3 sits on sofa
+Barber 1 is cutting Customer 1 s hairs.
+Customer 3 tries to get a barber for an haircut
+Customer 8 is paying Barber 3
+Customer 5 got an haircut
+Customer 5 tries to get a barber to pay
+Customer 3 will be served by Barber 2
+Customer 3 tries to get an haircut
+Barber 2 is cutting Customer 3 s hairs.
+Customer 9 sits on sofa
+Customer 9 tries to get a barber for an haircut
+Customer 1 got an haircut
+Customer 8 leaves the shop
+Customer 1 tries to get a barber to pay
+Customer 9 will be served by Barber 1
+Customer 9 tries to get an haircut
+Customer 5 will be served by Barber 3
+Barber 1 is cutting Customer 9 s hairs.
+Customer 5 is paying Barber 3
+Customer 3 got an haircut
+Customer 3 tries to get a barber to pay
+Customer 6 will be served by Barber 2
+Customer 9 got an haircut
+Customer 5 leaves the shop
+Customer 9 tries to get a barber to pay
+Customer 6 is paying Barber 2
+Customer 3 will be served by Barber 1
+Customer 4 will be served by Barber 3
+Customer 6 leaves the shop
+Customer 3 is paying Barber 1
+Customer 1 will be served by Barber 2
+Customer 3 leaves the shop
+Customer 4 is paying Barber 3
+Customer 2 will be served by Barber 1
+Customer 2 tries to get an haircut
+Barber 1 is cutting Customer 2 s hairs.
+Customer 4 leaves the shop
+Customer 1 is paying Barber 2
+Customer 7 will be served by Barber 3
+Customer 7 tries to get an haircut
+Customer 2 got an haircut
+Customer 2 tries to get a barber to pay
+Barber 3 is cutting Customer 7 s hairs.
+Customer 9 will be served by Barber 1
+Customer 1 leaves the shop
+Customer 9 is paying Barber 1
+Customer 2 will be served by Barber 2
+Customer 7 got an haircut
+Customer 7 tries to get a barber to pay
+Customer 7 will be served by Barber 3
+Customer 9 leaves the shop
+Customer 2 is paying Barber 2
+Customer 2 leaves the shop
+Customer 7 is paying Barber 3
+Customer 7 leaves the shop

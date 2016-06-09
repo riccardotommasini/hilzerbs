@@ -1,0 +1,703 @@
+Creating barber 1
+Creating barber 2
+Creating barber 3
+Creating customer 1
+Creating customer 2
+Creating customer 3
+Creating customer 4
+Creating customer 5
+Creating customer 6
+Creating customer 7
+Creating customer 8
+Creating customer 9
+Creating customer 10
+Creating customer 11
+Creating customer 12
+Creating customer 13
+Creating customer 14
+Creating customer 15
+Creating customer 16
+Creating customer 17
+Creating customer 18
+Creating customer 19
+Creating customer 20
+Creating customer 21
+Creating customer 22
+Creating customer 23
+Creating customer 24
+Creating customer 25
+Creating customer 26
+Creating customer 27
+Creating customer 28
+Creating customer 29
+Creating customer 30
+Creating customer 31
+Creating customer 32
+Creating customer 33
+Creating customer 34
+Creating customer 35
+Creating customer 36
+Creating customer 37
+Creating customer 38
+Creating customer 39
+Creating customer 40
+Creating customer 41
+Creating customer 42
+Creating customer 43
+Creating customer 44
+Creating customer 45
+Creating customer 46
+Creating customer 47
+Creating customer 48
+Creating customer 49
+Creating customer 50
+Customer 50 is alive 
+Customer 6 is alive 
+Customer 6 tries to enter the shop
+Customer 50 tries to enter the shop
+Customer 2 is alive 
+Customer 2 tries to enter the shop
+Customer 26 is alive 
+Customer 26 tries to enter the shop
+Customer 15 is alive 
+Customer 15 tries to enter the shop
+Customer 7 is alive 
+Customer 7 tries to enter the shop
+Customer 27 is alive 
+Customer 27 tries to enter the shop
+Customer 9 is alive 
+Customer 9 tries to enter the shop
+Customer 25 is alive 
+Customer 25 tries to enter the shop
+Customer 16 is alive 
+Customer 16 tries to enter the shop
+Customer 20 is alive 
+Customer 20 tries to enter the shop
+Customer 47 is alive 
+Customer 40 is alive 
+Customer 47 tries to enter the shop
+Customer 23 is alive 
+Customer 28 is alive 
+Customer 28 tries to enter the shop
+Customer 23 tries to enter the shop
+Customer 19 is alive 
+Customer 19 tries to enter the shop
+Customer 4 is alive 
+Customer 4 tries to enter the shop
+Customer 8 is alive 
+Customer 8 tries to enter the shop
+Customer 40 tries to enter the shop
+Customer 1 is alive 
+Customer 1 tries to enter the shop
+Customer 29 is alive 
+Customer 29 tries to enter the shop
+Customer 3 is alive 
+Customer 3 tries to enter the shop
+Customer 24 is alive 
+Customer 24 tries to enter the shop
+Customer 13 is alive 
+Customer 13 tries to enter the shop
+Customer 22 is alive 
+Customer 39 is alive 
+Customer 33 is alive 
+Customer 33 tries to enter the shop
+Customer 38 is alive 
+Customer 38 tries to enter the shop
+Customer 21 is alive 
+Customer 45 is alive 
+Customer 46 is alive 
+Customer 44 is alive 
+Customer 44 tries to enter the shop
+Customer 32 is alive 
+Customer 32 tries to enter the shop
+Customer 26 tries to sit
+Customer 7 tries to sit
+Customer 11 is alive 
+Customer 20 tries to sit
+Customer 40 tries to sit
+Customer 28 tries to sit
+Customer 12 is alive 
+Customer 12 tries to enter the shop
+Customer 5 is alive 
+Customer 5 tries to enter the shop
+Customer 45 tries to enter the shop
+Customer 43 is alive 
+Customer 29 tries to sit
+Customer 46 tries to enter the shop
+Customer 42 is alive 
+Customer 42 tries to enter the shop
+Customer 39 tries to enter the shop
+Customer 50 tries to sit
+Customer 6 tries to sit
+Customer 30 is alive 
+Customer 30 tries to enter the shop
+Customer 37 is alive 
+Customer 37 tries to enter the shop
+Customer 26 sits on sofa
+Customer 26 tries to get a barber for an haircut
+Customer 9 tries to sit
+Customer 27 tries to sit
+Customer 25 tries to sit
+Customer 11 tries to enter the shop
+Customer 16 tries to sit
+Customer 47 tries to sit
+Customer 26 will be served by Barber 1
+Customer 26 tries to get an haircut
+Barber 1 is cutting Customer 26 s hairs.
+Customer 4 tries to sit
+Customer 8 tries to sit
+Customer 21 tries to enter the shop
+Customer 1 tries to sit
+Customer 18 is alive 
+Customer 18 tries to enter the shop
+Customer 43 tries to enter the shop
+Customer 22 tries to enter the shop
+Customer 3 tries to sit
+Customer 24 tries to sit
+Customer 13 tries to sit
+Customer 10 is alive 
+Customer 44 tries to sit
+Customer 32 tries to sit
+Customer 15 tries to sit
+Customer 41 is alive 
+Customer 7 sits on sofa
+Customer 42 tries to sit
+Customer 48 is alive 
+Customer 23 tries to sit
+Customer 34 is alive 
+Customer 34 tries to enter the shop
+Customer 17 is alive 
+Customer 17 tries to enter the shop
+Customer 22 tries to sit
+Customer 39 tries to sit
+Customer 33 tries to sit
+Customer 38 tries to sit
+Customer 21 tries to sit
+Customer 49 is alive 
+Customer 49 tries to enter the shop
+Customer 10 tries to enter the shop
+Customer 2 tries to sit
+Customer 36 is alive 
+Customer 36 tries to enter the shop
+Customer 12 tries to sit
+Customer 35 is alive 
+Customer 35 tries to enter the shop
+Customer 43 tries to sit
+Customer 7 tries to get a barber for an haircut
+Customer 31 is alive 
+Customer 31 tries to enter the shop
+Customer 48 tries to enter the shop
+Customer 30 tries to sit
+Customer 37 tries to sit
+Customer 19 tries to sit
+Customer 18 tries to sit
+Customer 14 is alive 
+Customer 46 tries to sit
+Customer 10 tries to sit
+Customer 11 tries to sit
+Customer 5 tries to sit
+Customer 41 tries to enter the shop
+Customer 20 sits on sofa
+Customer 20 tries to get a barber for an haircut
+Customer 7 will be served by Barber 2
+Customer 41 tries to sit
+Customer 14 tries to enter the shop
+Customer 7 tries to get an haircut
+Customer 45 tries to sit
+Barber 2 is cutting Customer 7 s hairs.
+Customer 34 tries to sit
+Customer 48 tries to sit
+Customer 20 will be served by Barber 3
+Customer 17 tries to sit
+Customer 20 tries to get an haircut
+Barber 3 is cutting Customer 20 s hairs.
+Customer 26 got an haircut
+Customer 26 tries to get a barber to pay
+Customer 49 tries to sit
+Customer 35 tries to sit
+Customer 26 will be served by Barber 1
+Customer 36 tries to sit
+Customer 31 tries to sit
+Customer 14 tries to sit
+Customer 4 sits on sofa
+Customer 26 is paying Barber 1
+Customer 4 tries to get a barber for an haircut
+Customer 41 sits on sofa
+Customer 41 tries to get a barber for an haircut
+Customer 17 sits on sofa
+Customer 17 tries to get a barber for an haircut
+Customer 7 got an haircut
+Customer 7 tries to get a barber to pay
+Customer 4 will be served by Barber 2
+Customer 4 tries to get an haircut
+Customer 20 got an haircut
+Customer 20 tries to get a barber to pay
+Customer 17 will be served by Barber 3
+Customer 17 tries to get an haircut
+Barber 3 is cutting Customer 17 s hairs.
+Customer 34 sits on sofa
+Customer 34 tries to get a barber for an haircut
+Customer 26 leaves the shop
+Barber 2 is cutting Customer 4 s hairs.
+Customer 41 will be served by Barber 1
+Customer 41 tries to get an haircut
+Barber 1 is cutting Customer 41 s hairs.
+Customer 16 sits on sofa
+Customer 16 tries to get a barber for an haircut
+Customer 6 sits on sofa
+Customer 6 tries to get a barber for an haircut
+Customer 17 got an haircut
+Customer 17 tries to get a barber to pay
+Customer 41 got an haircut
+Customer 41 tries to get a barber to pay
+Customer 34 will be served by Barber 3
+Customer 34 tries to get an haircut
+Barber 3 is cutting Customer 34 s hairs.
+Customer 16 will be served by Barber 1
+Customer 16 tries to get an haircut
+Customer 4 got an haircut
+Customer 4 tries to get a barber to pay
+Barber 1 is cutting Customer 16 s hairs.
+Customer 45 sits on sofa
+Customer 45 tries to get a barber for an haircut
+Customer 6 will be served by Barber 2
+Customer 6 tries to get an haircut
+Barber 2 is cutting Customer 6 s hairs.
+Customer 40 sits on sofa
+Customer 40 tries to get a barber for an haircut
+Customer 3 sits on sofa
+Customer 3 tries to get a barber for an haircut
+Customer 34 got an haircut
+Customer 34 tries to get a barber to pay
+Customer 3 will be served by Barber 3
+Customer 3 tries to get an haircut
+Customer 50 sits on sofa
+Barber 3 is cutting Customer 3 s hairs.
+Customer 50 tries to get a barber for an haircut
+Customer 16 got an haircut
+Customer 16 tries to get a barber to pay
+Customer 50 will be served by Barber 1
+Customer 50 tries to get an haircut
+Customer 6 got an haircut
+Customer 6 tries to get a barber to pay
+Customer 45 will be served by Barber 2
+Customer 45 tries to get an haircut
+Barber 2 is cutting Customer 45 s hairs.
+Barber 1 is cutting Customer 50 s hairs.
+Customer 27 sits on sofa
+Customer 27 tries to get a barber for an haircut
+Customer 28 sits on sofa
+Customer 28 tries to get a barber for an haircut
+Customer 3 got an haircut
+Customer 3 tries to get a barber to pay
+Customer 41 will be served by Barber 3
+Customer 41 is paying Barber 3
+Customer 45 got an haircut
+Customer 45 tries to get a barber to pay
+Customer 34 will be served by Barber 2
+Customer 50 got an haircut
+Customer 50 tries to get a barber to pay
+Customer 3 will be served by Barber 1
+Customer 41 leaves the shop
+Customer 34 is paying Barber 2
+Customer 27 will be served by Barber 3
+Customer 27 tries to get an haircut
+Barber 3 is cutting Customer 27 s hairs.
+Customer 49 sits on sofa
+Customer 49 tries to get a barber for an haircut
+Customer 34 leaves the shop
+Customer 3 is paying Barber 1
+Customer 49 will be served by Barber 2
+Customer 49 tries to get an haircut
+Barber 2 is cutting Customer 49 s hairs.
+Customer 27 got an haircut
+Customer 13 sits on sofa
+Customer 13 tries to get a barber for an haircut
+Customer 27 tries to get a barber to pay
+Customer 20 will be served by Barber 3
+Customer 3 leaves the shop
+Customer 20 is paying Barber 3
+Customer 27 will be served by Barber 1
+Customer 49 got an haircut
+Customer 49 tries to get a barber to pay
+Customer 17 will be served by Barber 2
+Customer 20 leaves the shop
+Customer 27 is paying Barber 1
+Customer 49 will be served by Barber 3
+Customer 27 leaves the shop
+Customer 17 is paying Barber 2
+Customer 13 will be served by Barber 1
+Customer 13 tries to get an haircut
+Barber 1 is cutting Customer 13 s hairs.
+Customer 43 sits on sofa
+Customer 43 tries to get a barber for an haircut
+Customer 17 leaves the shop
+Customer 49 is paying Barber 3
+Customer 13 got an haircut
+Customer 13 tries to get a barber to pay
+Customer 28 will be served by Barber 2
+Customer 28 tries to get an haircut
+Customer 16 will be served by Barber 1
+Customer 31 sits on sofa
+Customer 31 tries to get a barber for an haircut
+Barber 2 is cutting Customer 28 s hairs.
+Customer 16 is paying Barber 1
+Customer 49 leaves the shop
+Customer 13 will be served by Barber 3
+Customer 28 got an haircut
+Customer 28 tries to get a barber to pay
+Customer 40 will be served by Barber 2
+Customer 40 tries to get an haircut
+Barber 2 is cutting Customer 40 s hairs.
+Customer 33 sits on sofa
+Customer 33 tries to get a barber for an haircut
+Customer 16 leaves the shop
+Customer 13 is paying Barber 3
+Customer 33 will be served by Barber 1
+Customer 33 tries to get an haircut
+Barber 1 is cutting Customer 33 s hairs.
+Customer 21 sits on sofa
+Customer 21 tries to get a barber for an haircut
+Customer 40 got an haircut
+Customer 40 tries to get a barber to pay
+Customer 7 will be served by Barber 2
+Customer 13 leaves the shop
+Customer 40 will be served by Barber 3
+Customer 7 is paying Barber 2
+Customer 33 got an haircut
+Customer 33 tries to get a barber to pay
+Customer 50 will be served by Barber 1
+Customer 7 leaves the shop
+Customer 43 will be served by Barber 2
+Customer 43 tries to get an haircut
+Customer 40 is paying Barber 3
+Barber 2 is cutting Customer 43 s hairs.
+Customer 14 sits on sofa
+Customer 14 tries to get a barber for an haircut
+Customer 40 leaves the shop
+Customer 50 is paying Barber 1
+Customer 43 got an haircut
+Customer 43 tries to get a barber to pay
+Customer 28 will be served by Barber 3
+Customer 33 will be served by Barber 2
+Customer 50 leaves the shop
+Customer 45 will be served by Barber 1
+Customer 28 is paying Barber 3
+Customer 28 leaves the shop
+Customer 33 is paying Barber 2
+Customer 4 will be served by Barber 3
+Customer 33 leaves the shop
+Customer 45 is paying Barber 1
+Customer 31 will be served by Barber 2
+Customer 31 tries to get an haircut
+Barber 2 is cutting Customer 31 s hairs.
+Customer 9 sits on sofa
+Customer 9 tries to get a barber for an haircut
+Customer 45 leaves the shop
+Customer 4 is paying Barber 3
+Customer 9 will be served by Barber 1
+Customer 9 tries to get an haircut
+Customer 32 sits on sofa
+Customer 31 got an haircut
+Customer 32 tries to get a barber for an haircut
+Customer 31 tries to get a barber to pay
+Barber 1 is cutting Customer 9 s hairs.
+Customer 21 will be served by Barber 2
+Customer 21 tries to get an haircut
+Barber 2 is cutting Customer 21 s hairs.
+Customer 24 sits on sofa
+Customer 24 tries to get a barber for an haircut
+Customer 4 leaves the shop
+Customer 31 will be served by Barber 3
+Customer 31 is paying Barber 3
+Customer 9 got an haircut
+Customer 9 tries to get a barber to pay
+Customer 14 will be served by Barber 1
+Customer 14 tries to get an haircut
+Barber 1 is cutting Customer 14 s hairs.
+Customer 12 sits on sofa
+Customer 12 tries to get a barber for an haircut
+Customer 21 got an haircut
+Customer 21 tries to get a barber to pay
+Customer 12 will be served by Barber 2
+Customer 12 tries to get an haircut
+Barber 2 is cutting Customer 12 s hairs.
+Customer 38 sits on sofa
+Customer 38 tries to get a barber for an haircut
+Customer 31 leaves the shop
+Customer 21 will be served by Barber 3
+Customer 21 is paying Barber 3
+Customer 14 got an haircut
+Customer 14 tries to get a barber to pay
+Customer 12 got an haircut
+Customer 12 tries to get a barber to pay
+Customer 6 will be served by Barber 1
+Customer 14 will be served by Barber 2
+Customer 21 leaves the shop
+Customer 6 is paying Barber 1
+Customer 9 will be served by Barber 3
+Customer 6 leaves the shop
+Customer 14 is paying Barber 2
+Customer 32 will be served by Barber 1
+Customer 32 tries to get an haircut
+Customer 1 sits on sofa
+Barber 1 is cutting Customer 32 s hairs.
+Customer 1 tries to get a barber for an haircut
+Customer 14 leaves the shop
+Customer 9 is paying Barber 3
+Customer 43 will be served by Barber 2
+Customer 32 got an haircut
+Customer 32 tries to get a barber to pay
+Customer 38 will be served by Barber 1
+Customer 38 tries to get an haircut
+Customer 47 sits on sofa
+Customer 47 tries to get a barber for an haircut
+Barber 1 is cutting Customer 38 s hairs.
+Customer 9 leaves the shop
+Customer 43 is paying Barber 2
+Customer 1 will be served by Barber 3
+Customer 1 tries to get an haircut
+Barber 3 is cutting Customer 1 s hairs.
+Customer 30 sits on sofa
+Customer 30 tries to get a barber for an haircut
+Customer 38 got an haircut
+Customer 38 tries to get a barber to pay
+Customer 30 will be served by Barber 1
+Customer 30 tries to get an haircut
+Barber 1 is cutting Customer 30 s hairs.
+Customer 37 sits on sofa
+Customer 37 tries to get a barber for an haircut
+Customer 43 leaves the shop
+Customer 1 got an haircut
+Customer 1 tries to get a barber to pay
+Customer 37 will be served by Barber 2
+Customer 37 tries to get an haircut
+Barber 2 is cutting Customer 37 s hairs.
+Customer 24 will be served by Barber 3
+Customer 5 sits on sofa
+Customer 24 tries to get an haircut
+Customer 5 tries to get a barber for an haircut
+Barber 3 is cutting Customer 24 s hairs.
+Customer 30 got an haircut
+Customer 30 tries to get a barber to pay
+Customer 5 will be served by Barber 1
+Customer 5 tries to get an haircut
+Barber 1 is cutting Customer 5 s hairs.
+Customer 18 sits on sofa
+Customer 18 tries to get a barber for an haircut
+Customer 23 sits on sofa
+Customer 23 tries to get a barber for an haircut
+Customer 37 got an haircut
+Customer 37 tries to get a barber to pay
+Customer 18 will be served by Barber 2
+Customer 18 tries to get an haircut
+Barber 2 is cutting Customer 18 s hairs.
+Customer 22 sits on sofa
+Customer 22 tries to get a barber for an haircut
+Customer 24 got an haircut
+Customer 24 tries to get a barber to pay
+Customer 37 will be served by Barber 3
+Customer 37 is paying Barber 3
+Customer 5 got an haircut
+Customer 5 tries to get a barber to pay
+Customer 22 will be served by Barber 1
+Customer 22 tries to get an haircut
+Barber 1 is cutting Customer 22 s hairs.
+Customer 8 sits on sofa
+Customer 8 tries to get a barber for an haircut
+Customer 18 got an haircut
+Customer 18 tries to get a barber to pay
+Customer 8 will be served by Barber 2
+Customer 8 tries to get an haircut
+Barber 2 is cutting Customer 8 s hairs.
+Customer 48 sits on sofa
+Customer 48 tries to get a barber for an haircut
+Customer 37 leaves the shop
+Customer 48 will be served by Barber 3
+Customer 48 tries to get an haircut
+Barber 3 is cutting Customer 48 s hairs.
+Customer 22 got an haircut
+Customer 22 tries to get a barber to pay
+Customer 5 will be served by Barber 1
+Customer 5 is paying Barber 1
+Customer 29 sits on sofa
+Customer 29 tries to get a barber for an haircut
+Customer 8 got an haircut
+Customer 8 tries to get a barber to pay
+Customer 29 will be served by Barber 2
+Customer 29 tries to get an haircut
+Barber 2 is cutting Customer 29 s hairs.
+Customer 19 sits on sofa
+Customer 19 tries to get a barber for an haircut
+Customer 48 got an haircut
+Customer 48 tries to get a barber to pay
+Customer 19 will be served by Barber 3
+Customer 19 tries to get an haircut
+Customer 5 leaves the shop
+Customer 47 will be served by Barber 1
+Customer 47 tries to get an haircut
+Barber 3 is cutting Customer 19 s hairs.
+Barber 1 is cutting Customer 47 s hairs.
+Customer 11 sits on sofa
+Customer 11 tries to get a barber for an haircut
+Customer 10 sits on sofa
+Customer 10 tries to get a barber for an haircut
+Customer 29 got an haircut
+Customer 29 tries to get a barber to pay
+Customer 10 will be served by Barber 2
+Customer 10 tries to get an haircut
+Barber 2 is cutting Customer 10 s hairs.
+Customer 44 sits on sofa
+Customer 19 got an haircut
+Customer 44 tries to get a barber for an haircut
+Customer 47 got an haircut
+Customer 47 tries to get a barber to pay
+Customer 19 tries to get a barber to pay
+Customer 12 will be served by Barber 3
+Customer 1 will be served by Barber 1
+Customer 12 is paying Barber 3
+Customer 10 got an haircut
+Customer 10 tries to get a barber to pay
+Customer 19 will be served by Barber 2
+Customer 12 leaves the shop
+Customer 1 is paying Barber 1
+Customer 10 will be served by Barber 3
+Customer 1 leaves the shop
+Customer 19 is paying Barber 2
+Customer 47 will be served by Barber 1
+Customer 19 leaves the shop
+Customer 10 is paying Barber 3
+Customer 29 will be served by Barber 2
+Customer 10 leaves the shop
+Customer 47 is paying Barber 1
+Customer 11 will be served by Barber 3
+Customer 11 tries to get an haircut
+Customer 35 sits on sofa
+Customer 35 tries to get a barber for an haircut
+Barber 3 is cutting Customer 11 s hairs.
+Customer 47 leaves the shop
+Customer 29 is paying Barber 2
+Customer 38 will be served by Barber 1
+Customer 11 got an haircut
+Customer 11 tries to get a barber to pay
+Customer 8 will be served by Barber 3
+Customer 29 leaves the shop
+Customer 11 will be served by Barber 2
+Customer 38 is paying Barber 1
+Customer 38 leaves the shop
+Customer 8 is paying Barber 3
+Customer 48 will be served by Barber 1
+Customer 8 leaves the shop
+Customer 11 is paying Barber 2
+Customer 30 will be served by Barber 3
+Customer 11 leaves the shop
+Customer 48 is paying Barber 1
+Customer 18 will be served by Barber 2
+Customer 48 leaves the shop
+Customer 30 is paying Barber 3
+Customer 22 will be served by Barber 1
+Customer 30 leaves the shop
+Customer 18 is paying Barber 2
+Customer 24 will be served by Barber 3
+Customer 18 leaves the shop
+Customer 23 will be served by Barber 2
+Customer 23 tries to get an haircut
+Customer 22 is paying Barber 1
+Customer 46 sits on sofa
+Customer 46 tries to get a barber for an haircut
+Barber 2 is cutting Customer 23 s hairs.
+Customer 22 leaves the shop
+Customer 24 is paying Barber 3
+Customer 23 got an haircut
+Customer 23 tries to get a barber to pay
+Customer 35 will be served by Barber 1
+Customer 35 tries to get an haircut
+Customer 44 will be served by Barber 2
+Barber 1 is cutting Customer 35 s hairs.
+Customer 25 sits on sofa
+Customer 44 tries to get an haircut
+Customer 25 tries to get a barber for an haircut
+Barber 2 is cutting Customer 44 s hairs.
+Customer 2 sits on sofa
+Customer 2 tries to get a barber for an haircut
+Customer 24 leaves the shop
+Customer 23 will be served by Barber 3
+Customer 23 is paying Barber 3
+Customer 44 got an haircut
+Customer 44 tries to get a barber to pay
+Customer 32 will be served by Barber 2
+Customer 35 got an haircut
+Customer 35 tries to get a barber to pay
+Customer 2 will be served by Barber 1
+Customer 2 tries to get an haircut
+Barber 1 is cutting Customer 2 s hairs.
+Customer 36 sits on sofa
+Customer 36 tries to get a barber for an haircut
+Customer 23 leaves the shop
+Customer 32 is paying Barber 2
+Customer 35 will be served by Barber 3
+Customer 2 got an haircut
+Customer 2 tries to get a barber to pay
+Customer 46 will be served by Barber 1
+Customer 46 tries to get an haircut
+Barber 1 is cutting Customer 46 s hairs.
+Customer 39 sits on sofa
+Customer 39 tries to get a barber for an haircut
+Customer 32 leaves the shop
+Customer 35 is paying Barber 3
+Customer 36 will be served by Barber 2
+Customer 36 tries to get an haircut
+Customer 42 sits on sofa
+Barber 2 is cutting Customer 36 s hairs.
+Customer 42 tries to get a barber for an haircut
+Customer 46 got an haircut
+Customer 46 tries to get a barber to pay
+Customer 42 will be served by Barber 1
+Customer 42 tries to get an haircut
+Barber 1 is cutting Customer 42 s hairs.
+Customer 15 sits on sofa
+Customer 15 tries to get a barber for an haircut
+Customer 35 leaves the shop
+Customer 15 will be served by Barber 3
+Customer 15 tries to get an haircut
+Barber 3 is cutting Customer 15 s hairs.
+Customer 36 got an haircut
+Customer 36 tries to get a barber to pay
+Customer 44 will be served by Barber 2
+Customer 44 is paying Barber 2
+Customer 42 got an haircut
+Customer 42 tries to get a barber to pay
+Customer 36 will be served by Barber 1
+Customer 15 got an haircut
+Customer 15 tries to get a barber to pay
+Customer 42 will be served by Barber 3
+Customer 44 leaves the shop
+Customer 15 will be served by Barber 2
+Customer 36 is paying Barber 1
+Customer 36 leaves the shop
+Customer 42 is paying Barber 3
+Customer 25 will be served by Barber 1
+Customer 25 tries to get an haircut
+Barber 1 is cutting Customer 25 s hairs.
+Customer 42 leaves the shop
+Customer 15 is paying Barber 2
+Customer 46 will be served by Barber 3
+Customer 25 got an haircut
+Customer 25 tries to get a barber to pay
+Customer 2 will be served by Barber 1
+Customer 15 leaves the shop
+Customer 46 is paying Barber 3
+Customer 25 will be served by Barber 2
+Customer 46 leaves the shop
+Customer 39 will be served by Barber 3
+Customer 39 tries to get an haircut
+Customer 2 is paying Barber 1
+Barber 3 is cutting Customer 39 s hairs.
+Customer 2 leaves the shop
+Customer 39 got an haircut
+Customer 39 tries to get a barber to pay
+Customer 25 is paying Barber 2
+Customer 39 will be served by Barber 1
+Customer 25 leaves the shop
+Customer 39 is paying Barber 1
+Customer 39 leaves the shop
