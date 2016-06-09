@@ -46,9 +46,9 @@ feature
 
 feature	
 	cash_deks_num: INTEGER = 1
-	customer_num: INTEGER = 50
-	barbers_num: INTEGER = 3
-	haircuts: INTEGER = 2
-	sofa_size: INTEGER = 20
-	waiting_room_size: INTEGER = 100
+	customer_num: INTEGER = 3
+	barbers_num: INTEGER = 1
+	haircuts: INTEGER = 1
+	sofa_size: INTEGER = 1
+	waiting_room_size: INTEGER = 2
 end

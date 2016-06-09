@@ -13,6 +13,12 @@ feature
 	chair : separate CHAIR
 	barber : detachable separate BARBER
 	cash_desk : separate CASHDESK
+	my_ticket : INTEGER assign set_ticket
+
+	set_ticket (i: INTEGER)
+		do
+			my_ticket := i
+		end
 
 	make (a_id: INTEGER; a_haircuts: INTEGER; a_shop: separate SHOP;a_sofa: separate SOFA;  a_chair: separate CHAIR;  a_cash_desk: separate CASHDESK)
 		require
@@ -65,13 +71,28 @@ feature
 			separate shop as sh do 
 				sh.leave_room
 			end
-			s.sit_down
-			print ("Customer "+id.out+" sits on sofa%N")
+			my_ticket := s.sit_down
+			print ("Customer "+id.out+" sits on sofa with ticket "+my_ticket.out+"%N")
 		end
 
-	pick_free_barber (c: separate CHAIR): separate BARBER
+
+	pick_free_barber_for_haircut (c: separate CHAIR): separate BARBER
 		require
-			c.has_room 
+			c.has_room  and c.allowed(my_ticket)
+		local
+			b: separate BARBER
+		do
+			b := c.head
+			separate b as barb do 
+				print ("Customer "+id.out+" will be served by Barber "+barb.id.out+"%N")
+			end
+			c.update(my_ticket)
+			Result := b
+		end
+
+	pick_free_barber_for_checkout (c: separate CHAIR): separate BARBER
+		require
+			c.has_room
 		local
 			b: separate BARBER
 		do
@@ -119,14 +140,17 @@ feature
 				print ("Customer "+id.out+" tries to sit%N")
 				sit_on_sofa (sofa)
 				
+
 				print ("Customer "+id.out+" tries to get a barber for an haircut%N")
 
-				barber := pick_free_barber (chair)
+				-- try_to_wait (chair)
+				barber := pick_free_barber_for_haircut (chair)
 
 				-- print ("Customer "+id.out+" stands up%N")
 
 				separate sofa as s
 					do
+						print ("Customer "+id.out +" stands up from the sofa%N")
 						s.stand_up
 					end
 
@@ -138,7 +162,7 @@ feature
 
 				print ("Customer "+id.out+" tries to get a barber to pay%N")
 
-				barber := pick_free_barber (chair)
+				barber := pick_free_barber_for_checkout (chair)
 
 				if attached barber as b then
 					checkout (b, cash_desk)
