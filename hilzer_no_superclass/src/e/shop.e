@@ -8,6 +8,8 @@ feature
 	size : INTEGER 
 	waiting : INTEGER
 	in_shop: INTEGER
+	
+	current_ticket: INTEGER 
 
 	open : BOOLEAN
 	make (a_size :INTEGER)
@@ -18,6 +20,7 @@ feature
 			waiting := 0
 			in_shop := 0
 			open := False
+			current_ticket := -1
 		end
 
 feature
@@ -31,16 +34,18 @@ feature
 			Result := in_shop = 0
 		end
 
-	enter
-    require
-      max_size: size - waiting > 0
-    do
-      waiting := waiting + 1
-      in_shop := in_shop + 1
-    ensure
-      waiting_size: waiting = old waiting + 1
-      new_size: in_shop = old in_shop + 1
-    end
+	enter: INTEGER
+	    require
+	      max_size: size - waiting > 0
+	    do
+	      waiting := waiting + 1
+	      in_shop := in_shop + 1
+	      current_ticket := current_ticket + 1
+	      Result := current_ticket
+	    ensure
+	      waiting_size: waiting = old waiting + 1
+	      new_size: in_shop = old in_shop + 1
+    	end
 
 	leave_room
     require

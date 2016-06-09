@@ -57,7 +57,7 @@ feature
 		do
 			print ("Customer "+id.out+" tries to enter the shop%N")
 			if s.has_room then
-				s.enter
+				my_ticket := s.enter
 				Result := True
 			else
 				Result := False
@@ -66,11 +66,13 @@ feature
 
 	sit_on_sofa (s: separate SOFA)
 		require
-			s.has_room
+			s.has_room and s.allowed (my_ticket)
 		do
 			separate shop as sh do 
 				sh.leave_room
 			end
+			
+			s.update (my_ticket)
 			my_ticket := s.sit_down
 			print ("Customer "+id.out+" sits on sofa with ticket "+my_ticket.out+"%N")
 		end

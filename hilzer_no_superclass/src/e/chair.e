@@ -7,6 +7,7 @@ create
 feature {NONE}
 	
 	barbers:  BOUNDED_QUEUE [ separate BARBER ]
+	allowed_tickets: ARRAY[INTEGER]
 
 	make (a_size: INTEGER)
 		require
@@ -17,7 +18,7 @@ feature {NONE}
 			max_size := a_size
 			curr_size := 0
 			create barbers.make (a_size)
-			max_ticket := max_size
+			next_ticket := max_size
 			
 			create allowed_tickets.make_filled (0, 0, a_size)
 				
@@ -31,13 +32,11 @@ feature {NONE}
 			end
 		end
 
-feature
+feature 
+	curr_size : INTEGER -- number of barbers that are currently waiting on their chairs
+	max_size : INTEGER -- maximum number of barbers 
+	next_ticket: INTEGER
 
-	max_size : INTEGER
-	curr_size : INTEGER
-	max_ticket: INTEGER
-	allowed_tickets: ARRAY[INTEGER]
-	
 	has_room: BOOLEAN
 		do
 			Result := curr_size > 0
@@ -75,7 +74,7 @@ feature
 
 	allowed(customer_ticket : INTEGER): BOOLEAN
 		do
-			print ("UPDATED TICKETS "+allowed_tickets.item(0).out+"%N")
+			print ("UPDATE CHAIR TICKETS "+allowed_tickets.item(0).out+"%N")
 			Result := allowed_tickets.has (customer_ticket)
 		end
 
@@ -97,8 +96,8 @@ feature
 				 i := i + 1
 			end
 			
-			allowed_tickets.put(max_ticket, index)
-			max_ticket := max_ticket + 1
+			allowed_tickets.put(next_ticket, index)
+			next_ticket := next_ticket + 1
 		end
 
 end
