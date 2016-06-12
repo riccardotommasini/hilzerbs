@@ -47,7 +47,7 @@ feature
 			
 			separate room as s
 				do
-					s.open_room
+					s.open_shop
 				end
 		end
 

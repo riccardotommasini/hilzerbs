@@ -31,6 +31,12 @@ feature {CUSTOMER} -- Operations
 			print ("Barber "+id.out+ " is cutting Customer "+ c.id.out +" s hairs.%N")			
 			(create {EXECUTION_ENVIRONMENT}).sleep ({INTEGER_64} 10_000_000)
 		end
+
+	accept_payment (c: separate CUSTOMER)
+		do
+			print ("Customer "+ c.id.out +" is paying Barber " + id.out +	"%N")
+			(create {EXECUTION_ENVIRONMENT}).sleep ({INTEGER_64} 10_000_000)
+		end
  
 feature -- Implementation
 

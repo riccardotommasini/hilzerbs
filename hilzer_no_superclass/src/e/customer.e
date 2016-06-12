@@ -36,14 +36,15 @@ feature {NONE} -- Initialization
 			id = a_id
 		end
 
-feature 
-	
+feature {CASHDESK, BARBER}
 	id: INTEGER
+
+feature {NONE}
+	
 	haircuts: INTEGER
 	room : separate ROOM
 	sofa : separate SOFA
 	barbers : separate BARBER_LIST
-	barber : detachable separate BARBER
 	cash_desk : separate CASHDESK
 	my_ticket : INTEGER assign set_ticket
 
@@ -56,6 +57,8 @@ feature
 		do
 			my_ticket := i
 		end
+
+
 
 feature {BARBERSHOP}
 	live
@@ -70,10 +73,10 @@ feature {BARBERSHOP}
 			end
 		end
 
-feature {NONE} -- Workaround to synchronize the process start
-
+feature {NONE} -- Synchronization
 
 	wait (s: separate ROOM)
+		-- Workaround to synchronize the process start
 		require
 			s.open
 		do
@@ -94,7 +97,8 @@ feature {NONE} -- Life actions
 		end
 
 	sit_on_sofa (s: separate SOFA)
-		-- sit on the shop sofa if there is room, otherwise it waits
+		-- sit on the shop sofa if there is room, otherwise it waits in the waiting room
+		-- 
 		require
 			s.has_room and s.allowed (my_ticket)
 		do
@@ -107,29 +111,34 @@ feature {NONE} -- Life actions
 			print ("Customer "+id.out+" sits on sofa with ticket "+my_ticket.out+"%N")
 		end
 
+	stand_up_sofa (s:separate SOFA)
+		do
+			print ("Customer "+id.out +" stands up from the sofa %N")
+			s.stand_up
+		end
 
-	sit_on_chair (c: separate BARBER_LIST)
+	sit_on_chair (c: separate BARBER_LIST): separate BARBER
 		-- gets a free barber from the barber array with FIFO ordering
+		-- and remove the customer from the sofa
 		require
 			c.has_room  and c.allowed(my_ticket)
 		local
 			b: separate BARBER
 		do
 			b := c.head
+
+			stand_up_sofa (sofa) -- moved here because I want the customer to stand before it releases the lock on barbers
+
 			separate b as barb do 
-				print ("Customer "+id.out+" sits on Barber "+barb.id.out+" s barbers %N")
+				print ("Customer "+id.out+" sits on Barber "+barb.id.out+" s chair %N")
 			end
 			c.update(my_ticket)
 
-			separate sofa as s -- moved here because I want the customer to stand before it releases the lock on barbers
-					do
-						print ("Customer "+id.out +" stands up from the sofa%N")
-						s.stand_up
-					end
-			barber := b
+					
+			Result := b
 		end
 
-	ask_for_checkout (c: separate BARBER_LIST)
+	ask_for_checkout (c: separate BARBER_LIST): separate BARBER
 		-- gets a free barber from the barber array, no FIFO guaranteed
 		require
 			c.has_room
@@ -140,48 +149,46 @@ feature {NONE} -- Life actions
 			separate b as barb do 
 				print ("Customer "+id.out+" will pay Barber "+barb.id.out+"%N")
 			end
-			barber := b
+			Result := b
 		end
 
-	get_hair_cut (brb: detachable separate BARBER)
+	free_barber (b: separate BARBER; bs: separate BARBER_LIST)
 		do
-			if attached brb as b then
-					t_get_hair_cut (b)
-			end
+			bs.sit (b)
 		end
-	t_get_hair_cut (b: separate BARBER)
+
+
+	get_hair_cut (b: separate BARBER)
 		-- allows to interact with the barber to get an haircut
 		do
 			b.cut_hair (Current)
 			haircuts := haircuts - 1
-			separate barbers as c
-				do
-					c.sit (b)
-				end
+			
 			print ("Customer "+id.out+" got an haircut%N")
 
+			free_barber (b, barbers)
 		end
 
-	checkout (brb: detachable separate BARBER; cd: separate CASHDESK)
-		do
-			if attached brb as b then
-				t_checkout(b, cd)
-			end
-		end
-
-	t_checkout (b: separate BARBER; cd: separate CASHDESK)
+	pay (b: separate BARBER; cd: separate CASHDESK)
 		-- allows to pay, no FIFO ordering guaranteed
 		require
 			cd.has_room
 		do
-			cd.checkout (b, Current)
-			separate barbers as c
-				do
-					c.sit (b)
-				end
+			cd.open
+			b.accept_payment (Current)
+			
+		end
+
+	checkout (b: separate BARBER; cd: separate CASHDESK)
+		require
+			not_empty: not cd.is_empty
+		do
+			cd.close
+			free_barber (b, barbers)
 		end
 
 	leave (s: separate ROOM)
+		-- remove the customer from the shop
 		require 
 			not s.empty
 		do
@@ -191,19 +198,23 @@ feature {NONE} -- Life actions
 
 	step
 		-- a cycle of life
+		local
+			barber: separate BARBER
 		do	
 			if enter (room) then
 
 				sit_on_sofa (sofa) -- if there is no room it will wait in the room (queue); FIFO
 	
-				sit_on_chair (barbers) -- if one is available
+				barber := sit_on_chair (barbers) -- if one is available
 
-				get_hair_cut (barber)
+				get_hair_cut (barber) -- from the assigned barber
 
-				ask_for_checkout (barbers)
+				barber := ask_for_checkout (barbers) -- if one is available
 
-				checkout (barber, cash_desk)
-				
+				pay (barber, cash_desk) -- to the assigned barber
+
+				checkout (barber, cash_desk) -- to the assigned barber
+
 				leave (room)
 
 			else
