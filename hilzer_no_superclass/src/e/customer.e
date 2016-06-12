@@ -1,61 +1,90 @@
+note
+	description	: "Objects that describe the behaviour of a customer"
+	author		: "Marco Balduini and Riccardo Tommasini"
+	date		: "2016/06/12"
+	reviewer	: "Bertrand Meyer"
+	revision	: "0.1"
+
 class
 	CUSTOMER
 
 create
 	make
 
-feature 
+feature {NONE} -- Initialization
 
+	make (a_id: INTEGER; a_haircuts: INTEGER; a_room: separate ROOM; a_sofa: separate SOFA;  a_barbers: separate BARBER_LIST;  a_cash_desk: separate CASHDESK)
+		-- Initialize with `a_id' as is
+		-- a_haircuts as haircuts
+		-- a_room as room
+		-- a_sofa as sofa
+		-- a_barbers as barbers
+		-- a_cash_desk as cash_desk
+
+		require
+			haircuts: a_haircuts > 0
+			id: a_id > 0
+		do
+			id := a_id
+			haircuts := a_haircuts
+			room := a_room
+			sofa := a_sofa
+			barbers := a_barbers
+			cash_desk := a_cash_desk
+		ensure
+			haircuts = a_haircuts
+			id = a_id
+		end
+
+feature 
+	
 	id: INTEGER
 	haircuts: INTEGER
-	shop : separate SHOP
+	room : separate ROOM
 	sofa : separate SOFA
-	chair : separate CHAIR
+	barbers : separate BARBER_LIST
 	barber : detachable separate BARBER
 	cash_desk : separate CASHDESK
 	my_ticket : INTEGER assign set_ticket
+
+	over: BOOLEAN
+		do
+			Result := haircuts <= 0
+		end
 
 	set_ticket (i: INTEGER)
 		do
 			my_ticket := i
 		end
 
-	make (a_id: INTEGER; a_haircuts: INTEGER; a_shop: separate SHOP;a_sofa: separate SOFA;  a_chair: separate CHAIR;  a_cash_desk: separate CASHDESK)
-		require
-			haircuts: a_haircuts > 0
-		do
-			id := a_id
-			haircuts := a_haircuts
-			shop := a_shop
-			sofa := a_sofa
-			chair := a_chair
-			cash_desk := a_cash_desk
-		end
-
-feature {APPLICATION}
+feature {BARBERSHOP}
 	live
 		do
-			wait (shop)
+			wait (room)
 			from
 			until
-				haircuts <= 0
+				over
 			loop
 				print ("Customer "+id.out+" is alive %N")
 				step
 			end
 		end
 
-feature 
+feature {NONE} -- Workaround to synchronize the process start
 
-	wait (s: separate SHOP)
+
+	wait (s: separate ROOM)
 		require
 			s.open
 		do
 		end
 
-	enter (s: separate SHOP): BOOLEAN
+feature {NONE} -- Life actions
+
+	enter (s: separate ROOM): BOOLEAN
+		-- Enter the shop, i.e. the waiting room
 		do
-			print ("Customer "+id.out+" tries to enter the shop%N")
+			print ("Customer "+id.out+" enters the room%N")
 			if s.has_room then
 				my_ticket := s.enter
 				Result := True
@@ -65,10 +94,11 @@ feature
 		end
 
 	sit_on_sofa (s: separate SOFA)
+		-- sit on the shop sofa if there is room, otherwise it waits
 		require
 			s.has_room and s.allowed (my_ticket)
 		do
-			separate shop as sh do 
+			separate room as sh do 
 				sh.leave_room
 			end
 			
@@ -78,7 +108,8 @@ feature
 		end
 
 
-	pick_free_barber_for_haircut (c: separate CHAIR): separate BARBER
+	sit_on_chair (c: separate BARBER_LIST)
+		-- gets a free barber from the barber array with FIFO ordering
 		require
 			c.has_room  and c.allowed(my_ticket)
 		local
@@ -86,13 +117,20 @@ feature
 		do
 			b := c.head
 			separate b as barb do 
-				print ("Customer "+id.out+" will be served by Barber "+barb.id.out+"%N")
+				print ("Customer "+id.out+" sits on Barber "+barb.id.out+" s barbers %N")
 			end
 			c.update(my_ticket)
-			Result := b
+
+			separate sofa as s -- moved here because I want the customer to stand before it releases the lock on barbers
+					do
+						print ("Customer "+id.out +" stands up from the sofa%N")
+						s.stand_up
+					end
+			barber := b
 		end
 
-	pick_free_barber_for_checkout (c: separate CHAIR): separate BARBER
+	ask_for_checkout (c: separate BARBER_LIST)
+		-- gets a free barber from the barber array, no FIFO guaranteed
 		require
 			c.has_room
 		local
@@ -100,16 +138,23 @@ feature
 		do
 			b := c.head
 			separate b as barb do 
-				print ("Customer "+id.out+" will be served by Barber "+barb.id.out+"%N")
+				print ("Customer "+id.out+" will pay Barber "+barb.id.out+"%N")
 			end
-			Result := b
+			barber := b
 		end
 
-	get_hair_cut (b: separate BARBER)
+	get_hair_cut (brb: detachable separate BARBER)
+		do
+			if attached brb as b then
+					t_get_hair_cut (b)
+			end
+		end
+	t_get_hair_cut (b: separate BARBER)
+		-- allows to interact with the barber to get an haircut
 		do
 			b.cut_hair (Current)
 			haircuts := haircuts - 1
-			separate chair as c
+			separate barbers as c
 				do
 					c.sit (b)
 				end
@@ -117,61 +162,49 @@ feature
 
 		end
 
-	checkout (b: separate BARBER; cd: separate CASHDESK)
+	checkout (brb: detachable separate BARBER; cd: separate CASHDESK)
+		do
+			if attached brb as b then
+				t_checkout(b, cd)
+			end
+		end
+
+	t_checkout (b: separate BARBER; cd: separate CASHDESK)
+		-- allows to pay, no FIFO ordering guaranteed
 		require
 			cd.has_room
 		do
 			cd.checkout (b, Current)
-			separate chair as c
+			separate barbers as c
 				do
 					c.sit (b)
 				end
 		end
 
-	leave (s: separate SHOP)
+	leave (s: separate ROOM)
 		require 
 			not s.empty
 		do
+			print ("Customer "+id.out+" leaves the room%N")
 			s.leave
 		end
 
 	step
+		-- a cycle of life
 		do	
-			if enter (shop) then
+			if enter (room) then
 
-				print ("Customer "+id.out+" tries to sit%N")
-				sit_on_sofa (sofa)
+				sit_on_sofa (sofa) -- if there is no room it will wait in the room (queue); FIFO
+	
+				sit_on_chair (barbers) -- if one is available
+
+				get_hair_cut (barber)
+
+				ask_for_checkout (barbers)
+
+				checkout (barber, cash_desk)
 				
-
-				print ("Customer "+id.out+" tries to get a barber for an haircut%N")
-
-				-- try_to_wait (chair)
-				barber := pick_free_barber_for_haircut (chair)
-
-				-- print ("Customer "+id.out+" stands up%N")
-
-				separate sofa as s
-					do
-						print ("Customer "+id.out +" stands up from the sofa%N")
-						s.stand_up
-					end
-
-				print ("Customer "+id.out+" tries to get an haircut%N")
-
-				if attached barber as b then
-					get_hair_cut (b)
-				end
-
-				print ("Customer "+id.out+" tries to get a barber to pay%N")
-
-				barber := pick_free_barber_for_checkout (chair)
-
-				if attached barber as b then
-					checkout (b, cash_desk)
-				end
-
-				print ("Customer "+id.out+" leaves the shop%N")
-				leave (shop)
+				leave (room)
 
 			else
 				print ("Customer " + id.out + " will come back later.%N")
@@ -179,5 +212,8 @@ feature
 			end
 		end
 
+invariant
+	id > 0
+	haircuts >= 0
 end
 

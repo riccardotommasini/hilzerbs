@@ -1,3 +1,10 @@
+note
+	description	: "Objects that describe a cashdesk"
+	author		: "Marco Balduini and Riccardo Tommasini"
+	date		: "2016/06/12"
+	reviewer	: "Bertrand Meyer"
+	revision	: "0.1"
+
 class
 	CASHDESK	
 

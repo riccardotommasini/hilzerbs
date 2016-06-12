@@ -1,5 +1,5 @@
 class
-	CHAIR
+	BARBER_LIST
 
 create
 	make
@@ -74,7 +74,6 @@ feature
 
 	allowed(customer_ticket : INTEGER): BOOLEAN
 		do
-			print ("UPDATE CHAIR TICKETS "+allowed_tickets.item(0).out+"%N")
 			Result := allowed_tickets.has (customer_ticket)
 		end
 

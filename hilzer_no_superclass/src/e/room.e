@@ -1,5 +1,12 @@
+note
+	description	: "Objects that describe a waiting room"
+	author		: "Marco Balduini and Riccardo Tommasini"
+	date		: "2016/06/12"
+	reviewer	: "Bertrand Meyer"
+	revision	: "0.1"
+
 class
-	SHOP
+	ROOM
 
 create
 	make
@@ -7,7 +14,7 @@ create
 feature
 	size : INTEGER 
 	waiting : INTEGER
-	in_shop: INTEGER
+	in_room: INTEGER
 	
 	current_ticket: INTEGER 
 
@@ -18,7 +25,7 @@ feature
 		do
 			size := a_size
 			waiting := 0
-			in_shop := 0
+			in_room := 0
 			open := False
 			current_ticket := -1
 		end
@@ -31,7 +38,7 @@ feature
 
 	empty: BOOLEAN
 		do
-			Result := in_shop = 0
+			Result := in_room = 0
 		end
 
 	enter: INTEGER
@@ -39,12 +46,12 @@ feature
 	      max_size: size - waiting > 0
 	    do
 	      waiting := waiting + 1
-	      in_shop := in_shop + 1
+	      in_room := in_room + 1
 	      current_ticket := current_ticket + 1
 	      Result := current_ticket
 	    ensure
 	      waiting_size: waiting = old waiting + 1
-	      new_size: in_shop = old in_shop + 1
+	      new_size: in_room = old in_room + 1
     	end
 
 	leave_room
@@ -58,14 +65,14 @@ feature
 
   leave
     require
-      in_shop_ne: in_shop > 0
+      in_room_ne: in_room > 0
     do
-      in_shop := in_shop - 1
+      in_room := in_room - 1
     ensure
-      new_size: in_shop = old in_shop - 1
+      new_size: in_room = old in_room - 1
     end
 
-	open_shop
+	open_room
 		do
 			open := True
 		end
