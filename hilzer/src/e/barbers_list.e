@@ -1,3 +1,10 @@
+note
+	description	: "Objects that describe a a list of barber"
+	author		: "Marco Balduini and Riccardo Tommasini"
+	date		: "2016/06/12"
+	reviewer	: "Bertrand Meyer"
+	revision	: "0.1"
+
 class
 	BARBER_LIST
 

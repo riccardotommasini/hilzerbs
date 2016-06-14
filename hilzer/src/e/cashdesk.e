@@ -1,35 +1,66 @@
+note
+	description	: "Objects that describe a cashdesk"
+	author		: "Marco Balduini and Riccardo Tommasini"
+	date		: "2016/06/12"
+	reviewer	: "Bertrand Meyer"
+	revision	: "0.1"
+
 class
 	CASHDESK	
-
-inherit
-  FIFO_QUEUE
 
 create
 	make
 
-feature
+feature {NONE} -- Initialization
 
 	make (a_size: INTEGER)
-	  require
-	  	max_size: a_size > 0
+		-- Initialize with `a_size' as size
 		do 
 			size := a_size
 		end
 
-feature 
+feature {NONE} -- Implementation
+	size : INTEGER -- number of concurrent checkouts
+	waiting : INTEGER  --  number of customer waiting to pay
 
-	checkout (b: separate BARBER; c: separate CUSTOMER)
-		do
-			print ("Customer "+ c.id.out +" is paying Barber " +b.id.out+"%N")
-			(create {EXECUTION_ENVIRONMENT}).sleep ({INTEGER_64} 10_000_000)
+feature {CUSTOMER} -- Access
+
+	has_room: BOOLEAN
+		-- is there any sit available?
+		local
+			available : INTEGER
+		do	
+			available := size - waiting
+			print (available.out +" Available cash desks %N")
+			Result := size - waiting > 0
 		end
 
-	use
+	is_empty: BOOLEAN
+		-- is the sofa empty?
+		do
+			Result := waiting = 0
+		end
+
+feature {CUSTOMER} -- Basic Operations
+
+	open
+		-- occupies one cash desk
 		do
 			waiting := waiting + 1
+		ensure
+			waiting = old waiting + 1
 		end
-	finish
+
+	close
+		-- frees one cash desk
 		do
 			waiting := waiting - 1
+		ensure
+			waiting = old waiting - 1
+
 		end
+
+invariant
+	positive_size: size > 0 -- size must be greater than zero
+	non_negative_line: waiting >= 0	-- waiting line must be non negative
 end

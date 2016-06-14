@@ -1,12 +1,12 @@
 note
-	description	: "Objects that describe a waiting room"
+	description	: "Objects that describe a barbershop with a standing waiting room"
 	author		: "Marco Balduini and Riccardo Tommasini"
 	date		: "2016/06/12"
 	reviewer	: "Bertrand Meyer"
 	revision	: "0.1"
 
 class
-	ROOM
+	BARBERSHOP
 
 create
 	make
