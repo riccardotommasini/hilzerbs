@@ -87,7 +87,7 @@ feature {CUSTOMER} -- Basic Operations
       		new_size: in_shop = old in_shop - 1
     	end
 
-feature {BARBERSHOP} -- Access
+feature {APPLICATION} -- Access
 	open_shop
 		do
 			open := True

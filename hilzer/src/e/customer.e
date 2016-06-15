@@ -13,10 +13,10 @@ create
 
 feature {NONE} -- Initialization
 
-	make (a_id: INTEGER; a_haircuts: INTEGER; a_room: separate ROOM; a_sofa: separate SOFA;  a_barbers: separate BARBER_LIST;  a_cash_desk: separate CASHDESK)
+	make (a_id: INTEGER; a_haircuts: INTEGER; a_shop: separate BARBERSHOP; a_sofa: separate SOFA;  a_barbers: separate BARBER_LIST;  a_cash_desk: separate CASHDESK)
 		-- Initialize with `a_id' as is
 		-- a_haircuts as haircuts
-		-- a_room as room
+		-- a_shop as shop
 		-- a_sofa as sofa
 		-- a_barbers as barbers
 		-- a_cash_desk as cash_desk
@@ -27,7 +27,7 @@ feature {NONE} -- Initialization
 		do
 			id := a_id
 			haircuts := a_haircuts
-			room := a_room
+			shop := a_shop
 			sofa := a_sofa
 			barbers := a_barbers
 			cash_desk := a_cash_desk
@@ -42,7 +42,7 @@ feature {CASHDESK, BARBER}
 feature {NONE}
 	
 	haircuts: INTEGER
-	room : separate ROOM
+	shop : separate BARBERSHOP
 	sofa : separate SOFA
 	barbers : separate BARBER_LIST
 	cash_desk : separate CASHDESK
@@ -60,10 +60,10 @@ feature {NONE}
 
 
 
-feature {BARBERSHOP}
+feature {APPLICATION}
 	live
 		do
-			wait (room)
+			wait (shop)
 			from
 			until
 				over
@@ -75,7 +75,7 @@ feature {BARBERSHOP}
 
 feature {NONE} -- Synchronization
 
-	wait (s: separate ROOM)
+	wait (s: separate BARBERSHOP)
 		-- Workaround to synchronize the process start
 		require
 			s.open
@@ -84,10 +84,10 @@ feature {NONE} -- Synchronization
 
 feature {NONE} -- Life actions
 
-	enter (s: separate ROOM): BOOLEAN
+	enter (s: separate BARBERSHOP): BOOLEAN
 		-- Enter the shop, i.e. the waiting room
 		do
-			print ("Customer "+id.out+" enters the room%N")
+			print ("Customer "+id.out+" enters the shop%N")
 			if s.has_room then
 				my_ticket := s.enter
 				Result := True
@@ -102,7 +102,7 @@ feature {NONE} -- Life actions
 		require
 			s.has_room and s.allowed (my_ticket)
 		do
-			separate room as sh do 
+			separate shop as sh do 
 				sh.leave_room
 			end
 			
@@ -187,12 +187,12 @@ feature {NONE} -- Life actions
 			free_barber (b, barbers)
 		end
 
-	leave (s: separate ROOM)
+	leave (s: separate BARBERSHOP)
 		-- remove the customer from the shop
 		require 
 			not s.empty
 		do
-			print ("Customer "+id.out+" leaves the room%N")
+			print ("Customer "+id.out+" leaves the shop%N")
 			s.leave
 		end
 
@@ -201,7 +201,7 @@ feature {NONE} -- Life actions
 		local
 			barber: separate BARBER
 		do	
-			if enter (room) then
+			if enter (shop) then
 
 				sit_on_sofa (sofa) -- if there is no room it will wait in the room (queue); FIFO
 	
@@ -215,7 +215,7 @@ feature {NONE} -- Life actions
 
 				checkout (barber, cash_desk) -- to the assigned barber
 
-				leave (room)
+				leave (shop)
 
 			else
 				print ("Customer " + id.out + " will come back later.%N")
