@@ -4,15 +4,16 @@ In the *project* folder there are three different projects:
 
 - hilzer: the proposed solution 
 - hilzer_pc: an attempt to solve the problem using a producer consumer pattern
-- hilzer_no_superclass: a working solution that is not well engineered 
 
 # HOW TO RUN
 
+Once the Eiffel libraries are loaded, then execute one of the .out files in the *executables* folder and specify the following parameters (if needed):
 
-Once the Eiffel libraries are loaded, then execute one of the .out files in the *executables* folder.
+* -cd : Number of cash desks (1 by default)
+* -b : Number of barbers in the barbershop (3 by default)
+* -c : Number of customers involved in the execution (10 by default)
+* -h : Number of haircuts per customer (1 by default)
+* -s : Size of the sofa (4 by default)
+* -w : Size of the standing waiting room (16 by default)
 
-# RESULTS
-
-All the results are in the *results* folder and they regards *only* the hilzer solution and are named as follow
-
-*hilzer_[NUMBER OF BARBERS]b[NUMBER OF CUSTOMERS]c[NUMBER OF HAIRCUTS]h.log*
+or -help for an inline help
