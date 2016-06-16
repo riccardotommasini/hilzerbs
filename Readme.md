@@ -17,3 +17,9 @@ Once the Eiffel libraries are loaded, then execute one of the .out files in the 
 * -w : Size of the standing waiting room (16 by default)
 
 or -help for an inline help
+
+# RESULTS
+
+All the results are in the *results* folder and they regards *only* the hilzer solution and are named as follow
+
+*hilzer_[NUMBER OF BARBERS]b[NUMBER OF CUSTOMERS]c[NUMBER OF HAIRCUTS]h.txt*

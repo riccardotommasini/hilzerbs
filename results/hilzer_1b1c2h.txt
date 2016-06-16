@@ -1,0 +1,22 @@
+Number of cash desk: 1
+Number of barbers: 1
+Number of customers: 1
+Number of haircuts per customer: 2
+Number of waiting sits on sofa : 1
+Number of waiting place in standing room :1
+
+Creating barber 1
+Creating customer 1
+Customer 1 is alive 
+Customer 1 enters the shop
+Customer 1 sits on sofa with ticket 0
+Customer 1 stands up from the sofa 
+Customer 1 sits on Barber 1 s chair 
+Barber 1 is cutting Customer 1 s hairs.
+Customer 1 got an haircut
+Customer 1 will pay Barber 1
+1 Available cash desks 
+Customer 1 is paying Barber 1
+Customer 1 leaves the shop
+Customer 1 is alive 
+Customer 1 enters the shop
